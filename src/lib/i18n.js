@@ -53,7 +53,7 @@ export const zh_CN = {
   // Dashboard Header
   header: {
     title: "自定义数字大屏",
-    subtitle: "专业数据可视化",
+    subtitle: "专业数据可视化平台",
     addWidget: "添加小组件",
     edit: "编辑",
     save: "保存",
