@@ -1,15 +1,17 @@
-# Professional Dashboard Builder
+# 自定义数字大屏 | Custom Digital Dashboard
 
-A modern, customizable dashboard component system for building professional data visualization screens suitable for executive presentations. Built with React, Vite, and Tailwind CSS.
+一个现代化、可定制的数字大屏系统，专为构建专业级数据可视化展示界面而设计。适用于企业展示、数据监控和高管演示。
 
-## 🚀 Features
+A modern, customizable digital dashboard system designed for building professional data visualization displays. Perfect for enterprise presentations, data monitoring, and executive dashboards.
 
-### Core Functionality
-- **Drag & Drop Layout**: Intuitive widget positioning with smooth animations
-- **Responsive Grid System**: Automatically adapts to different screen sizes
-- **Theme Support**: Light/dark mode toggle with professional color schemes
-- **Persistent Storage**: Auto-save functionality preserves your work
-- **Welcome Screen**: Guided onboarding with usage instructions
+## 🚀 核心功能 | Features
+
+### 核心功能 | Core Functionality
+- **拖拽布局 | Drag & Drop Layout**: 直观的小组件拖拽定位，流畅动画效果
+- **响应式网格 | Responsive Grid**: 自动适配不同屏幕尺寸
+- **主题支持 | Theme Support**: 明暗主题切换，专业配色方案
+- **数据持久化 | Persistent Storage**: 自动保存功能，保护您的工作成果
+- **引导界面 | Welcome Screen**: 向导式入门指导
 
 ### Widget Library
 - **Data Visualization**: Line charts, pie charts, bar charts, data cards
@@ -95,18 +97,32 @@ A modern, customizable dashboard component system for building professional data
 - **Clock**: Current time with timezone support
 - **Weather**: Current conditions and forecast
 
-## 🔧 Development
+## 🌐 在线体验 | Live Demo
 
-### Available Scripts
+🔗 **访问地址 | Live URL**: [即将提供 | Coming Soon]
+
+## 🛠️ 技术栈 | Tech Stack
+
+- **前端框架 | Frontend**: React 19 + Vite
+- **样式系统 | Styling**: Tailwind CSS with custom design system
+- **图表库 | Charts**: Recharts for data visualizations
+- **布局系统 | Layout**: React Grid Layout for drag-and-drop functionality
+- **图标库 | Icons**: Lucide React
+- **状态管理 | State Management**: React Context API
+- **构建工具 | Build Tool**: Vite with optimized production builds
+
+## 🔧 开发 | Development
+
+### 可用脚本 | Available Scripts
 ```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run test     # Run tests
-npm run lint     # Run ESLint
+npm run dev      # 启动开发服务器 | Start development server
+npm run build    # 构建生产版本 | Build for production
+npm run preview  # 预览生产构建 | Preview production build
+npm run test     # 运行测试 | Run tests
+npm run lint     # 运行ESLint | Run ESLint
 ```
 
-## 🚀 Deployment
+## 🚀 部署 | Deployment
 
 ### Build for Production
 ```bash
