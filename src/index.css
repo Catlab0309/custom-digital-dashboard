@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .widget-container {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 dark:border-gray-700/30 p-4 transition-all duration-300 overflow-hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-sizing: border-box;
+  }
+
+  .widget-container:hover {
+    @apply shadow-xl border-white/30 dark:border-gray-600/40 bg-white/80 dark:bg-gray-800/80;
+    transform: translateY(-2px);
+  }
+
+  /* 数据卡片专用样式 - 确保内容正确显示 */
+  .data-card-widget {
+    @apply w-full h-full flex flex-col justify-center items-center text-center;
+    min-height: 0;
+    position: relative;
+  }
+
+  .data-card-widget * {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 拖拽时确保数据卡片内容可见 */
+  .react-grid-item.react-draggable-dragging .data-card-widget {
+    overflow: visible !important;
+  }
+
+  .widget-handle {
+    @apply cursor-move bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded p-1 transition-colors;
+  }
+
+  .widget-drag-handle {
+    @apply cursor-move select-none;
+    touch-action: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .widget-drag-handle:hover {
+    @apply bg-gray-200 dark:bg-gray-600;
+  }
+
+  .grid-placeholder {
+    @apply bg-blue-100 dark:bg-blue-900/30 border-2 border-dashed border-blue-300 dark:border-blue-600 rounded-lg;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-500/80 to-purple-600/80 hover:from-blue-600/90 hover:to-purple-700/90 text-white font-medium py-2 px-4 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 shadow-lg hover:shadow-xl;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply bg-white/60 hover:bg-white/80 dark:bg-gray-800/60 dark:hover:bg-gray-800/80 text-gray-900 dark:text-gray-100 font-medium py-2 px-4 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500/50 focus:ring-offset-2 shadow-md hover:shadow-lg border border-white/20 dark:border-gray-700/30;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Glassmorphism Components */
+  .glass-panel {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/30;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-header {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg border-b border-white/20 dark:border-gray-700/30;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-modal {
+    @apply bg-white/95 dark:bg-gray-800/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/30 dark:border-gray-700/40;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
+  .glass-button {
+    @apply bg-white/60 hover:bg-white/80 dark:bg-gray-800/60 dark:hover:bg-gray-800/80 backdrop-blur-md rounded-xl border border-white/20 dark:border-gray-700/30 transition-all duration-300 shadow-md hover:shadow-lg;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+  }
+
+  .glass-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .glass-input {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-xl border border-white/30 dark:border-gray-700/40 focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* React Grid Layout Styles */
+  .react-grid-layout {
+    position: relative;
+    width: 100% !important;
+    min-height: calc(100vh - 4rem);
+  }
+
+  .react-grid-item {
+    transition: all 200ms ease;
+    transition-property: left, top;
+  }
+
+  .react-grid-item.cssTransforms {
+    transition-property: transform;
+  }
+
+  .react-grid-item > .react-resizable-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZG90cyBmaWxsPSIjOTk5IiBjeD0iMSIgY3k9IjEiIHI9IjEiLz4KPGRvdHMgZmlsbD0iIzk5OSIgY3g9IjEiIGN5PSI1IiByPSIxIi8+Cjxkb3RzIGZpbGw9IiM5OTkiIGN4PSI1IiBjeT0iMSIgcj0iMSIvPgo8ZG90cyBmaWxsPSIjOTk5IiBjeD0iNSIgY3k9IjUiIHI9IjEiLz4KPC9zdmc+Cg==');
+    background-position: bottom right;
+    padding: 0 3px 3px 0;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    box-sizing: border-box;
+    cursor: se-resize;
+  }
+
+  .react-grid-item.react-grid-placeholder {
+    @apply bg-blue-100 dark:bg-blue-900/30 border-2 border-dashed border-blue-300 dark:border-blue-600 rounded-lg;
+    opacity: 0.2;
+    transition-duration: 100ms;
+    z-index: 2;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .react-grid-item.react-draggable-dragging {
+    transition: none;
+    z-index: 3 !important;
+  }
+
+  .react-grid-item.react-grid-placeholder {
+    background: rgba(59, 130, 246, 0.15);
+    border: 2px dashed rgba(59, 130, 246, 0.4);
+  }
+
+  .widget-grid-item {
+    height: 100%;
+  }
+
+  .editing-mode .react-grid-item {
+    cursor: move;
+  }
+
+  .editing-mode .react-grid-item:hover {
+    @apply ring-2 ring-blue-400 ring-opacity-50;
+  }
+
+  /* 触摸设备优化 */
+  .react-grid-layout {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .react-grid-item {
+    touch-action: manipulation;
+  }
+
+  .react-grid-item > .react-resizable-handle {
+    touch-action: none;
+  }
+
+  /* 移动设备优化 */
+  @media (max-width: 768px) {
+    .react-grid-item > .react-resizable-handle {
+      width: 24px;
+      height: 24px;
+    }
+
+    .react-grid-layout {
+      touch-action: pan-y;
+    }
+  }
+
+  /* 桌面设备空间优化 */
+  @media (min-width: 1024px) {
+    .dashboard-grid {
+      @apply max-w-none;
+    }
+  }
+
+  /* 14寸笔记本优化 (1366x768, 1440x900) */
+  @media (min-width: 1200px) and (max-width: 1600px) {
+    .react-grid-layout {
+      min-height: calc(100vh - 3.5rem);
+    }
+  }
+
+  /* Z-Index 层级系统 */
+  .z-widget-content { z-index: 1; }
+  .z-widget-controls { z-index: 100; }
+  .z-widget-delete { z-index: 200; }
+  .z-sidebar { z-index: 1000; }
+  .z-modal-backdrop { z-index: 50000 !important; }
+  .z-modal-content { z-index: 50001 !important; }
+  .z-tooltip { z-index: 60000; }
+}
